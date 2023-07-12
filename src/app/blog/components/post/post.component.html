@@ -1,0 +1,18 @@
+<div class="flex justify-center items-center gap-4 h-screen w-screen">
+  <div class="flex flex-col gap-6">
+    <app-title title="post"></app-title>
+    <ul class="h-[70vh] overflow-scroll overflow-x-hidden px-2 border">
+      <li
+        *ngFor="let post of postList"
+        (click)="chageId(post.id)"
+        routerLinkActive="active"
+        class="border border-yellow-200 my-2 hover:cursor-pointer w-[350px] p-2 hover:scale-[1.02] hover:bg-yellow-100"
+      >
+        {{ post.title }}
+      </li>
+    </ul>
+  </div>
+  <ng-container *ngIf="postDetail.id !== 0">
+    <app-detail-post [postDetail]="postDetail"></app-detail-post>
+  </ng-container>
+</div>

@@ -1,0 +1,18 @@
+<div class="flex flex-col">
+  <img
+    class="w-[500px]"
+    src="{{ userDetail.avatar }}"
+    alt="{{ userDetail.first_name }}"
+  />
+  <div class="flex gap-2 text-2xl mt-2 font-bold">
+    <p>{{ userDetail.first_name }}</p>
+    <p>{{ userDetail.last_name }}</p>
+  </div>
+  <p>{{ userDetail.email }}</p>
+  <button
+    class="mt-3 p-2 bg-yellow-200 rounded-md font-bold hover:bg-yellow-300 self-end"
+    [routerLink]="['/send-form']"
+  >
+    Page form
+  </button>
+</div>
